@@ -38,10 +38,10 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 -- TEST --
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$servername = "45.44.220.195";
+$username = "bastien";
+$password = "club300";
+$dbname = "rgt_rank";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -50,7 +50,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$sql = "SELECT * FROM Series";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
