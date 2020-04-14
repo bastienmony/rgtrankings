@@ -54,7 +54,7 @@ Testing Table with or without php
 <th>Canadian</th>
 <th>80</th>
 </tr>
-</table>
+
 	
 <?php
 
