@@ -26,26 +26,10 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
+### RGT Ranking
 
-<html>
-<head>
-	<title>RGT Ranking</title>
-<style>
-table {
-border-collapse: collapse;
-width: 100%;
-color: #588c7e;
-font-family: monospace;
-font-size: 12px;
-text-align: left;
-}
-th {
-background-color: #588c7e;
-color: white;
-}
-tr:nth-child(even) {background-color: #f2f2f2}
-</style>
-</head>
+Testing Table with or without php
+
 <body>
 <h3>General Ranking</h3>
 <table>
