@@ -65,18 +65,15 @@ tr:nth-child(even) {background-color: #f2f2f2}
 <th>Nationality</th>
 <th>Score</th>
 </tr>
-
-<?php
-
-while($row = 1->fetch_assoc()) {
-echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row["Nationality"] . "</td><td>". $row["Score"]. "</td></tr>";
-}
-echo "</table>";
-} else { echo "0 results"; }
-
-
-?>
-
+<th>1</th>
+<th>Bastien Mony</th>
+<th>Canadian</th>
+<th>100</th>	
+</tr>
+<th>2</th>
+<th>Maxime Turcotte</th>
+<th>Canadian</th>
+<th>80</th>	
 </table>
 </body>
 </html>
