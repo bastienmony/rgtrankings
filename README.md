@@ -72,7 +72,7 @@ $username = "bastien";
 $password = "club300";
 $dbname = "rgt_rank";
 
-$conn = mysqli_connect("xxx.xxx.x", "xxx", "xxxxx", "rgt_rank");
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
