@@ -67,10 +67,10 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </tr>
 <?php
 
-$servername = "45.44.220.195";
-$username = "bastien";
-$password = "club300";
-$dbname = "rgt_rank";
+$servername = "localhost";
+$username = "root";
+$password = "rgttesting";
+$dbname = "mysql";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
