@@ -64,16 +64,19 @@ tr:nth-child(even) {background-color: #f2f2f2}
 <th>Name</th>
 <th>Nationality</th>
 <th>Score</th>
+	
 </tr>
 <th>1</th>
 <th>Bastien Mony</th>
 <th>Canadian</th>
-<th>100</th>	
+<th>100</th>
+	
 </tr>
 <th>2</th>
 <th>Maxime Turcotte</th>
 <th>Canadian</th>
-<th>80</th>	
+<th>80</th>
+
 </table>
 </body>
 </html>
