@@ -53,7 +53,15 @@ Testing Table with or without php
 <th>Maxime Turcotte</th>
 <th>Canadian</th>
 <th>80</th>
+
+</table>
 	
+<?php
+
+echo "Hello World!";
+
+?>
+
 </tr>
 
 
