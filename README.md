@@ -36,31 +36,87 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
--- TEST --
+
+<html>
+<head>
+	<title>RGT Ranking</title>
+<style>
+table {
+border-collapse: collapse;
+width: 100%;
+color: #588c7e;
+font-family: monospace;
+font-size: 12px;
+text-align: left;
+}
+th {
+background-color: #588c7e;
+color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+</style>
+</head>
+<body>
+<h3>General Ranking</h3>
+<table>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Nationality</th>
+<th>Score</th>
+</tr>
 <?php
+
 $servername = "45.44.220.195";
 $username = "bastien";
 $password = "club300";
 $dbname = "rgt_rank";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect("xxx.xxx.x", "xxx", "xxxxx", "rgt_rank");
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT * FROM Series";
+$sql = "SELECT Rank, Players.Name, Nationality, Score FROM Ranking LEFT JOIN Players ON Players.Player_ID = Ranking.Player_ID WHERE Serie_ID = 1 ORDER BY Rank;";
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-    }
-} else {
-    echo "0 results";
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row["Nationality"] . "</td><td>". $row["Score"]. "</td></tr>";
 }
+echo "</table>";
+} else { echo "0 results"; }
 $conn->close();
 ?>
+</table>
+<h3>Watts Up Crit Serie</h3>
+<table>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Nationality</th>
+<th>Points</th>
+</tr>
+<?php
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT Rank, Players.Name, Nationality, Points FROM Ranking LEFT JOIN Players ON Players.Player_ID = Ranking.Player_ID WHERE Serie_ID = 2 ORDER BY Rank;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row["Nationality"] . "</td><td>". $row["Points"]. "</td></tr>";
+}
+echo "</table>";
+} else { echo "0 results"; }
+$conn->close();
+?>
+</table>
+</body>
+</html>
+
+
 
