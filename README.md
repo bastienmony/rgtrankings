@@ -55,9 +55,7 @@ Testing Table with or without php
 <th>80</th>
 	
 </tr>
-</table>
-</body>
-</html>
+
 
 
 
