@@ -67,51 +67,53 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </tr>
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "rgttesting";
-$dbname = "mysql";
+$elements = [];
 
-// Check connection
-if ($servername -> "localhost") {
-die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT Rank, Players.Name, Nationality, Score FROM Ranking LEFT JOIN Players ON Players.Player_ID = Ranking.Player_ID WHERE Serie_ID = 1 ORDER BY Rank;";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row["Nationality"] . "</td><td>". $row["Score"]. "</td></tr>";
-}
-echo "</table>";
-} else { echo "0 results"; }
+    // An array of 10,000 elements with random string values
+    for ($i = 0; $i < 10000; $i++) {
+            $elements[] = (string) rand(10000000, 99999999);
+    }
 
-?>
-</table>
-<h3>Watts Up Crit Serie</h3>
-<table>
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Nationality</th>
-<th>Points</th>
-</tr>
-<?php
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT Rank, Players.Name, Nationality, Points FROM Ranking LEFT JOIN Players ON Players.Player_ID = Ranking.Player_ID WHERE Serie_ID = 2 ORDER BY Rank;";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row["Nationality"] . "</td><td>". $row["Points"]. "</td></tr>";
-}
-echo "</table>";
-} else { echo "0 results"; }
-$conn->close();
+    $numberOfElements = count($elements);
+    $numberOfElements2 = $numberOfElements;
+    
+    // for test
+    $timeStart = microtime(true);
+    
+    for ($i = 0; $i < $numberOfElements; $i++) { }
+
+    $timeEnd = microtime(true);
+    $for_time = $timeEnd - $timeStart;
+
+    // foreach test
+    $timeStart = microtime(true);
+
+    foreach ($elements as $element) { }
+
+    $timeEnd = microtime(true);
+    $foreach_time = $timeEnd - $timeStart;
+
+    // while test
+    $timeStart = microtime(true);
+
+    while ($numberOfElements-- > 0) { }
+
+    $timeEnd = microtime(true);
+    $whileTime = $timeEnd - $timeStart;
+    
+    // do-while test
+    $timeStart = microtime(true);
+
+    do { }
+    while ($numberOfElements2-- > 0);
+
+    $timeEnd = microtime(true);
+    $d0WhileTime = $timeEnd - $timeStart;
+    
+    echo "For took: " . number_format($for_time * 1000, 3) . "ms <br>";
+    echo "Foreach took: " . number_format($foreach_time * 1000, 3) . "ms <br>";
+    echo "While took: " . number_format($whileTime * 1000, 3) . "ms <br>";
+    echo "Do-while took: " . number_format($d0WhileTime * 1000, 3) . "ms <br>";
 ?>
 </table>
 </body>
