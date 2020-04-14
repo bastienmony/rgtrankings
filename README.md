@@ -72,9 +72,8 @@ $username = "root";
 $password = "rgttesting";
 $dbname = "mysql";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
+if ($servername -> "localhost") {
 die("Connection failed: " . $conn->connect_error);
 }
 $sql = "SELECT Rank, Players.Name, Nationality, Score FROM Ranking LEFT JOIN Players ON Players.Player_ID = Ranking.Player_ID WHERE Serie_ID = 1 ORDER BY Rank;";
@@ -86,7 +85,7 @@ echo "<tr><td>" . $row["Rank"]. "</td><td>" . $row["Name"] . "</td><td>" . $row[
 }
 echo "</table>";
 } else { echo "0 results"; }
-$conn->close();
+
 ?>
 </table>
 <h3>Watts Up Crit Serie</h3>
