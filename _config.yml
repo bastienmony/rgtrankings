@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
 
-- name: PHP Runner
-  uses: franzliedke/gh-action-php@0.2.0
+name: PHP Runner
+uses: franzliedke/gh-action-php@0.2.0
