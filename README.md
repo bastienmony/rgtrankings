@@ -28,6 +28,8 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### RGT Ranking
 
+[Test Website](registration/index.php)
+
 Testing Table with or without php
 
 <body>
@@ -54,13 +56,6 @@ Testing Table with or without php
 <th>Canadian</th>
 <th>80</th>
 </tr>
-
-	
-<?php
-
-echo "Hello World!";
-
-?>
 
 
 
