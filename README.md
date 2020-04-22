@@ -28,7 +28,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### RGT Ranking
 
-[Test Website](registration/index.php)
+[Test Website](index.html)
 
 Testing Table with or without php
 
